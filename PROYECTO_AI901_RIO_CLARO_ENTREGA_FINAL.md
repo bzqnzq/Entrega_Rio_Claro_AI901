@@ -24,7 +24,7 @@ La arquitectura es híbrida:
 
 La solución evita presentar datos ficticios como información real, muestra fuentes y limitaciones, protege solicitudes sensibles y mantiene las decisiones críticas bajo supervisión humana.
 
-![Portada pública de Río Claro](evidencias_rio_claro/01_portada_publica_rio_claro.png)
+![Portada pública de Río Claro](01_portada_publica_rio_claro.png)
 
 > **Figura 1. Centro Inteligente de Operaciones Río Claro.** Aplicación web desplegada en Azure App Service con navegación empresarial, Resumen ejecutivo, indicadores tipo semáforo y alertas operativas. Los datos mostrados son ficticios y se utilizan exclusivamente para demostrar las capacidades de la solución.
 
@@ -86,9 +86,9 @@ El tablero presenta indicadores demostrativos de productos, existencias, inventa
 
 La sección **Requiere atención** permite navegar hacia el detalle asociado.
 
-![Alertas del Resumen ejecutivo](evidencias_rio_claro/15_detalle_alerta_inventario-2.png)
+![Alertas del Resumen ejecutivo](15_detalle_alerta_inventario-2.png)
 
-![Detalle de productos bajo mínimo](evidencias_rio_claro/15_detalle_alerta_inventario-1.png)
+![Detalle de productos bajo mínimo](15_detalle_alerta_inventario-1.png)
 
 > **Figura 15. Navegación interactiva de alertas.** La alerta de 26 productos bajo mínimo conduce al módulo Inventario y productos, donde se presenta el detalle filtrado con SKU, existencia, mínimo y estado Reabastecer.
 
@@ -96,7 +96,7 @@ La sección **Requiere atención** permite navegar hacia el detalle asociado.
 
 La aplicación acepta consultas por SKU con o sin guion y recupera datos estructurados. También permite buscar productos y registrar altas demostrativas.
 
-![Consulta de inventario por SKU](evidencias_rio_claro/02_consulta_inventario_sku.png)
+![Consulta de inventario por SKU](02_consulta_inventario_sku.png)
 
 > **Figura 2. Consulta operativa de inventario por SKU.** El asistente normaliza RC1007 como RC-1007 y recupera existencia, mínimo, estado, categoría, sucursal, ubicación y precios desde el inventario local persistente.
 
@@ -104,7 +104,7 @@ La aplicación acepta consultas por SKU con o sin guion y recupera datos estruct
 
 El motor analítico interpreta intención, métrica, dimensión, filtros, orden y empates. Esto evita responder con listados generales cuando la pregunta solicita un máximo, ranking o agregación.
 
-![Análisis de compras](evidencias_rio_claro/03_analitica_proveedor_compras.png)
+![Análisis de compras](03_analitica_proveedor_compras.png)
 
 > **Figura 3. Análisis agregado de compras y manejo de empates.** El motor agrupa las operaciones de compra por la contraparte disponible e identifica todas las coincidencias con la cantidad máxima. La respuesta transparenta la limitación del campo de contraparte en el modelo demostrativo.
 
@@ -112,9 +112,9 @@ El motor analítico interpreta intención, métrica, dimensión, filtros, orden 
 
 El módulo permite registrar cliente, categoría, prioridad y descripción; genera un folio y establece el estado inicial.
 
-![Formulario de queja](evidencias_rio_claro/08a_formulario_queja.png)
+![Formulario de queja](08a_formulario_queja.png)
 
-![Queja registrada](evidencias_rio_claro/08b_queja_registrada.png)
+![Queja registrada](08b_queja_registrada.png)
 
 > **Figura 8. Registro demostrativo de una queja.** La aplicación genera el folio Q-3019 y asigna el estado inicial Nueva. Los datos fueron creados exclusivamente como evidencia del proyecto.
 
@@ -122,7 +122,7 @@ El módulo permite registrar cliente, categoría, prioridad y descripción; gene
 
 El módulo permite cargar un archivo y generar una evaluación inicial estructurada. Esta función es demostrativa y no realiza OCR, validación fiscal ni autorización de pagos.
 
-![Análisis de factura demostrativa](evidencias_rio_claro/09_analisis_factura_duplicada.png)
+![Análisis de factura demostrativa](09_analisis_factura_duplicada.png)
 
 > **Figura 9. Análisis inicial de una factura demostrativa.** La aplicación procesa un archivo ficticio y reporta nombre, tamaño, estado y señal de posible duplicado. Cualquier coincidencia requiere revisión humana.
 
@@ -130,7 +130,7 @@ El módulo permite cargar un archivo y generar una evaluación inicial estructur
 
 El módulo de voz reconoce la pregunta, muestra el texto interpretado, ejecuta la consulta, presenta la respuesta y puede reproducirla. El audio no se almacena.
 
-![Consulta por voz](evidencias_rio_claro/06_consulta_por_voz.png)
+![Consulta por voz](06_consulta_por_voz.png)
 
 > **Figura 6. Consulta operativa mediante voz.** La solución reconoce una pregunta hablada sobre reabastecimiento, consulta el inventario y reproduce la respuesta, manteniendo visibles la fuente, las limitaciones y el control para detener el audio.
 
@@ -138,7 +138,7 @@ El módulo de voz reconoce la pregunta, muestra el texto interpretado, ejecuta l
 
 La interfaz adapta navegación, portada, botones y tarjetas a una pantalla vertical.
 
-![Vista móvil](evidencias_rio_claro/07_vista_movil_portada.png)
+![Vista móvil](07_vista_movil_portada.png)
 
 > **Figura 7. Experiencia móvil de Río Claro.** La navegación tipo hamburguesa y la distribución vertical permiten utilizar la solución desde dispositivos móviles.
 
@@ -158,7 +158,7 @@ flowchart LR
     AG --> KB[rioclaro-operations-kb]
     KB --> M[Manual Operativo]
     KB --> P[Proyecto AI-901]
-    API --> H[/health y /health/foundry]
+    API --> H["Diagnostico: /health y /health/foundry"]
 ```
 
 ### Flujo de enrutamiento
@@ -175,15 +175,15 @@ flowchart LR
 
 Las preguntas conceptuales se resuelven mediante un agente que utiliza documentación aprobada.
 
-![Consulta documental con Foundry](evidencias_rio_claro/04_consulta_documental_foundry.png)
+![Consulta documental con Foundry](04_consulta_documental_foundry.png)
 
 > **Figura 4. Consulta documental mediante Microsoft Foundry.** Una pregunta conceptual formulada sin mencionar expresamente el manual se deriva al agente y se responde con fuentes autorizadas, limitaciones y origen técnico foundry.
 
-![Agente en Microsoft Foundry](evidencias_rio_claro/14_agente_foundry_conocimiento.png)
+![Agente en Microsoft Foundry](14_agente_foundry_conocimiento.png)
 
 > **Figura 14a. Agente de Río Claro en Microsoft Foundry.** El agente `rioclaro-operations-agent` utiliza instrucciones específicas y la base `rioclaro-operations-kb`.
 
-![Fuentes de conocimiento](evidencias_rio_claro/14b_fuentes_conocimiento_foundry.png)
+![Fuentes de conocimiento](14b_fuentes_conocimiento_foundry.png)
 
 > **Figura 14b. Base de conocimiento autorizada.** La base integra el documento del proyecto AI-901 y el Manual Operativo, ambos activos.
 
@@ -193,11 +193,11 @@ Las preguntas conceptuales se resuelven mediante un agente que utiliza documenta
 
 La solución está desplegada en Azure App Service sobre Linux y Python 3.14, con plan Basic B1 y una instancia.
 
-![App Service en ejecución](evidencias_rio_claro/12a_app_service_en_ejecucion.png)
+![App Service en ejecución](12a_app_service_en_ejecucion.png)
 
 > **Figura 12a. Aplicación desplegada en Azure App Service.** La solución está en ejecución y disponible públicamente. Los identificadores administrativos se ocultaron.
 
-![Plan B1](evidencias_rio_claro/12b_plan_azure_b1.png)
+![Plan B1](12b_plan_azure_b1.png)
 
 > **Figura 12b. Infraestructura de hospedaje.** Azure App Service Linux, plan Basic B1 y una instancia.
 
@@ -205,13 +205,13 @@ La solución está desplegada en Azure App Service sobre Linux y Python 3.14, co
 
 La aplicación usa identidad administrada y Microsoft Entra ID en lugar de incrustar API keys en el código.
 
-![Identidad administrada](evidencias_rio_claro/13_identidad_administrada.png)
+![Identidad administrada](13_identidad_administrada.png)
 
 > **Figura 13. Autenticación mediante identidad administrada.** El App Service emplea una identidad asignada por el sistema y autorización basada en roles.
 
 ### Diagnóstico activo
 
-![Diagnóstico Foundry](evidencias_rio_claro/05_health_foundry.png)
+![Diagnóstico Foundry](05_health_foundry.png)
 
 > **Figura 5. Validación activa y sanitizada de Microsoft Foundry.** `/health/foundry` confirma configuración, credencial, acceso al proyecto, resolución del agente, conversación y respuesta, sin exponer secretos.
 
@@ -231,7 +231,7 @@ Río Claro incorpora controles de:
 | Rendición de cuentas | Identifica datos ficticios, fuentes y límites del entorno piloto |
 | Equidad | Aplica reglas homogéneas de consulta y no utiliza atributos personales protegidos para decidir |
 
-![IA responsable](evidencias_rio_claro/10_ia_responsable.png)
+![IA responsable](10_ia_responsable.png)
 
 > **Figura 10. IA responsable por diseño.** La interfaz explica los controles de confiabilidad, privacidad, transparencia, supervisión humana, inclusión y seguridad.
 
@@ -241,7 +241,7 @@ Río Claro incorpora controles de:
 
 La solución cuenta con pruebas automatizadas para API, persistencia, consultas operativas, motor analítico, enrutamiento híbrido, seguridad, Foundry y comportamiento de interfaz.
 
-![Pruebas automatizadas](evidencias_rio_claro/11_pruebas_automatizadas.png)
+![Pruebas automatizadas](11_pruebas_automatizadas.png)
 
 > **Figura 11. Validación automatizada.** La suite finalizó con 122 pruebas aprobadas y cero fallos. Las 45 advertencias corresponden a avisos de obsolescencia de dependencias y no impiden la ejecución.
 
